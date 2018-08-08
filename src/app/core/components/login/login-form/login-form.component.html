@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm">
+  <div>
+    <app-validation-feedback controlName="username"></app-validation-feedback>
+    <input type="text" id="username" class="fixed" formControlName="username">
+    <label for="username">Nazwa użytkownika</label>
+  </div>
+  <div>
+    <app-validation-feedback controlName="password"></app-validation-feedback>
+    <input type="password" id="password" class="fixed" formControlName="password">
+    <label for="password">Hasło</label>
+  </div>
+</form>
+<div>
+  <button class="fixed primary" routerLink="user-dashboard">Zaloguj</button>
+  <button class="fixed secondary" routerLink="password-recovery">Przypomnij hasło</button>
+</div>

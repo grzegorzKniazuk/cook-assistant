@@ -1,0 +1,5 @@
+<label class="checkbox-wrapper">
+  <span class="label"><ng-content></ng-content></span>
+  <input #checkbox type="checkbox" role="checkbox" (change)="registerOnChange($event.target.checked)" (blur)="registerOnTouched()">
+  <span class="check-mark"></span>
+</label>

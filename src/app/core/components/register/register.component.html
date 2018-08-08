@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Rejestracja nowego użytkownika</h1>
+  <div class="register-form-container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+      <!-- login -->
+      <div>
+        <app-validation-feedback controlName="username"></app-validation-feedback>
+        <input type="text" id="username" class="fixed" formControlName="username">
+        <label for="username">Nazwa użytkownika</label>
+      </div>
+
+      <!-- password -->
+      <div>
+        <app-validation-feedback controlName="password"></app-validation-feedback>
+        <input type="password" id="password" class="fixed" formControlName="password">
+        <label for="password">Hasło</label>
+      </div>
+
+      <!-- password repeat -->
+      <div>
+        <app-validation-feedback controlName="passwordRepeat" [groupName]="registerForm"></app-validation-feedback>
+        <input type="password" id="passwordRepeat" class="fixed" formControlName="passwordRepeat" [ngClass]="{'fieldsNotMatch': registerForm.hasError('passwordNotMatch')}">
+        <label for="passwordRepeat">Powtórz hasło</label>
+      </div>
+
+      <!-- email -->
+      <div>
+        <app-validation-feedback controlName="email"></app-validation-feedback>
+        <input type="email" id="email" class="fixed" formControlName="email">
+        <label for="email">Adres e-mail</label>
+      </div>
+
+      <!-- regulations -->
+      <div>
+        <app-checkbox formControlName="regulationsAccepted">Oświadczam, że akceptuję regulamin serwisu.</app-checkbox>
+      </div>
+    </form>
+    <div>
+      <button class="fixed primary" [disabled]="registerForm.invalid">Załóż konto</button>
+    </div>
+  </div>
+</div>

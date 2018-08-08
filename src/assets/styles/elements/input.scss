@@ -1,0 +1,203 @@
+label {
+  position: relative;
+}
+
+input {
+  display: block;
+  position: relative;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-top: 5px;
+  border-bottom: 1px solid var(--dark);
+  background: var(--light);
+  outline: none;
+
+  &.ultra-small {
+    font-size: $paragraph-footer;
+    width: 50px;
+  }
+
+  &.extra-small {
+    font-size: $paragraph-footer;
+    width: 100px;
+  }
+
+  &.small {
+    font-size: $paragraph-footer;
+    width: 150px;
+  }
+
+  &.normal {
+    font-size: $paragraph;
+    width: 200px;
+  }
+
+  &.big {
+    font-size: $paragraph;
+    width: 250px;
+  }
+
+  &.extra-big {
+    font-size: $paragraph;
+    width: 300px;
+  }
+
+  &.ultra-big {
+    font-size: $headline-3;
+    width: 350px;
+  }
+
+  &.fixed {
+    font-size: $headline-3;
+    width: 100%;
+  }
+
+  &:focus {
+    animation: focus 250ms ease-in-out;
+    border-bottom: 1px solid var(--primary);
+  }
+
+  &.ng-valid:not(.fieldsNotMatch).ng-dirty {
+    animation: valid 250ms ease-in-out;
+    border-bottom: 1px solid var(--success);
+
+    ~label {
+      &:after{
+        animation: check 250ms ease-in-out;
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 2px;
+        bottom: -27px;
+
+        width: 4px;
+        height: 12px;
+
+        border: solid var(--success);
+        border-width: 0 2px 2px 0;
+
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &.ng-invalid.ng-dirty, &.ng-invalid.ng-touched, &.ng-dirty.fieldsNotMatch {
+    animation: invalid 250ms ease-in-out;
+    border-bottom: 1px solid var(--danger);
+
+    ~label {
+      &:before, &:after {
+        animation: cross 250ms ease-in-out;
+        position: absolute;
+        right: 4px;
+        bottom: -28px;
+        content: '';
+        height: 16px;
+        width: 2px;
+        background-color: var(--danger);
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &:focus {
+    ~label {
+      animation: font-size-down 500ms ease-in-out;
+      font-size: $paragraph-label;
+    }
+  }
+
+  &:not(:focus) {
+    ~label {
+      animation: font-size-up 500ms ease-in-out;
+      font-size: $paragraph;
+    }
+  }
+}
+
+@keyframes font-size-down {
+  0% {
+    font-size: $paragraph;
+    &:after {
+      font-size: $headline-1;
+    }
+  }
+  100% {
+    font-size: $paragraph-label;
+    &:after {
+      font-size: $headline-1;
+    }
+  }
+}
+
+@keyframes font-size-up {
+  0% {
+    font-size: $paragraph-label;
+    &:after {
+      font-size: $headline-1;
+    }
+  }
+  100% {
+    font-size: $paragraph;
+    &:after {
+      font-size: $headline-1;
+    }
+  }
+}
+
+@keyframes focus {
+  0% {
+    border-bottom: 1px solid var(--dark);
+  }
+  100% {
+    border-bottom: 1px solid var(--primary);
+  }
+}
+
+@keyframes valid {
+  0% {
+    border-bottom: 1px solid var(--dark);
+  }
+  100% {
+    border-bottom: 1px solid var(--success);
+  }
+}
+
+@keyframes invalid {
+  0% {
+    border-bottom: 1px solid var(--dark);
+  }
+  100% {
+    border-bottom: 1px solid var(--danger);
+  }
+}
+
+@keyframes check {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    width: 4px;
+    height: 12px;
+  }
+}
+
+@keyframes cross {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    width: 2px;
+    height: 16px;
+  }
+}

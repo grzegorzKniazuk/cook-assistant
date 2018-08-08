@@ -1,0 +1,12 @@
+<form [formGroup]="passwordRecoveryForm">
+  <div>
+    <p class="p-error valid" *ngIf="passwordRecoveryForm.get('passwordRecoveryInput').valid && passwordRecoveryForm.get('loginInput').dirty">Pole wypełnione poprawnie.</p>
+    <p class="p-error invalid" *ngIf="passwordRecoveryForm.get('passwordRecoveryInput').hasError('email')">Wprowadź przynajmniej 5 znaków.</p>
+    <input type="text" id="email" class="fixed" formControlName="passwordRecoveryInput">
+    <label for="email">Proszę wprowadzić adres e-mail</label>
+  </div>
+</form>
+<div>
+  <button class="fixed primary">Resetuj hasło</button>
+</div>
+

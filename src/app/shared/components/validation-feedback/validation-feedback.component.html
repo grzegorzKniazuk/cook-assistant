@@ -1,0 +1,5 @@
+<p class="p-error valid" *ngIf="control.valid && control.dirty && !groupName?.hasError('passwordNotMatch')">Pole wypełnione poprawnie.</p>
+<p class="p-error invalid" *ngIf="control.hasError('required') && (control.dirty || control.touched) && control.value.length === 0">To pole jest wymagane.</p>
+<p class="p-error invalid" *ngIf="control.hasError('minlength') && control.dirty">Wprowadź przynajmniej 5 znaków.</p>
+<p class="p-error invalid" *ngIf="control.hasError('email')">Niepoprawny adres e-mail.</p>
+<p class="p-error invalid" *ngIf="groupName?.hasError('passwordNotMatch') && control.dirty && control.value.length > 0">Podane hasła nie są zgodne.</p>
