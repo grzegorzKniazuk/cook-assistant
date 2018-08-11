@@ -1,10 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard.component';
 import {AuthGuard} from '../../guards/auth.guard';
 
 
 const DASHBOARD_ROUTES: Routes = [
-  { path: 'dashboard', component: DashboardComponent, canActivate: [ AuthGuard ] },
+  { path: 'dashboard', canActivate: [ AuthGuard ], loadChildren: 'src/app/core/components/dashboard/dashboard.module#DashboardModule' },
 ];
 
 export const dashboardRoute = RouterModule.forChild(DASHBOARD_ROUTES);

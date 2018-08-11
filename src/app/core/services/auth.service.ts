@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { shareReplay, tap } from 'rxjs/operators';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -9,7 +9,6 @@ import { User } from '../interfaces/user';
 })
 export class AuthService {
 
-  public isLoggedIn$ = new Subject<Observable<any>>();
   constructor(private httpClient: HttpClient) { }
 
   public login(username: string, password: string): Observable<User> {
@@ -31,8 +30,7 @@ export class AuthService {
   }
 
   public isLoggedIn() {
-    this.isLoggedIn$.next(this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'idToken': localStorage.getItem('id_token')}));
-    // return this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'idToken': localStorage.getItem('id_token')});
+    return this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'idToken': localStorage.getItem('id_token')});
   }
 
   isLoggedOut() {
