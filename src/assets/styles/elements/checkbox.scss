@@ -21,7 +21,7 @@ $border-width: 0 2px 2px 0;
 
     &:checked {
       ~ .check-mark:after {
-        animation: show-check-mark 250ms ease-in-out;
+        transition: opacity 250ms ease-in;
         opacity: 1;
       }
     }
@@ -40,7 +40,7 @@ $border-width: 0 2px 2px 0;
     &:after {
       content: '';
       position: absolute;
-      animation: hide-check-mark 250ms ease-in-out;
+      transition: opacity 250ms ease-out;
       opacity: 0;
       left: 6px;
       top: 0;
@@ -51,23 +51,5 @@ $border-width: 0 2px 2px 0;
       transform: rotate(45deg);
 
     }
-  }
-}
-
-@keyframes show-check-mark {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hide-check-mark {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }

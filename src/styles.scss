@@ -11,3 +11,7 @@ h2 {
 h3 {
   font-size: $headline-2;
 }
+
+body.preload * {
+  animation-duration: 0s !important;
+}

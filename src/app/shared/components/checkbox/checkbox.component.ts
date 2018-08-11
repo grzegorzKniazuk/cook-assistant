@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, forwardRef, Renderer2, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const CHECKBOX_VALUE_ACCESSOR: any = {
@@ -10,8 +10,6 @@ const CHECKBOX_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss'],
-  encapsulation: ViewEncapsulation.None,
   providers: [CHECKBOX_VALUE_ACCESSOR],
 })
 

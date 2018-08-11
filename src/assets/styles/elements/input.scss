@@ -13,6 +13,20 @@ input {
   background: var(--light);
   outline: none;
 
+  &:focus {
+    ~label {
+      transition: font-size 250ms ease-in;
+      font-size: $paragraph-label;
+    }
+  }
+
+  &:not(:focus) {
+    ~label {
+      transition: font-size 250ms ease-out;
+      font-size: $paragraph;
+    }
+  }
+
   &.ultra-small {
     font-size: $paragraph-footer;
     width: 50px;
@@ -70,13 +84,10 @@ input {
         position: absolute;
         right: 2px;
         bottom: -27px;
-
         width: 4px;
         height: 12px;
-
         border: solid var(--success);
         border-width: 0 2px 2px 0;
-
         transform: rotate(45deg);
       }
     }
@@ -103,50 +114,6 @@ input {
       &:after{
         transform: rotate(-45deg);
       }
-    }
-  }
-
-  &:focus {
-    ~label {
-      animation: font-size-down 500ms ease-in-out;
-      font-size: $paragraph-label;
-    }
-  }
-
-  &:not(:focus) {
-    ~label {
-      animation: font-size-up 500ms ease-in-out;
-      font-size: $paragraph;
-    }
-  }
-}
-
-@keyframes font-size-down {
-  0% {
-    font-size: $paragraph;
-    &:after {
-      font-size: $headline-1;
-    }
-  }
-  100% {
-    font-size: $paragraph-label;
-    &:after {
-      font-size: $headline-1;
-    }
-  }
-}
-
-@keyframes font-size-up {
-  0% {
-    font-size: $paragraph-label;
-    &:after {
-      font-size: $headline-1;
-    }
-  }
-  100% {
-    font-size: $paragraph;
-    &:after {
-      font-size: $headline-1;
     }
   }
 }

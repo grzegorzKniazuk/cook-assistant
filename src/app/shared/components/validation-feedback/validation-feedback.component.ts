@@ -1,11 +1,9 @@
-import {Component, Input, OnInit, Optional, ViewEncapsulation} from '@angular/core';
-import {FormControl, FormGroup, FormGroupDirective} from '@angular/forms';
+import { Component, Input, OnInit, Optional } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-validation-feedback',
   templateUrl: './validation-feedback.component.html',
-  styleUrls: ['./validation-feedback.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class ValidationFeedbackComponent implements OnInit {
   @Input() public control: FormControl;
