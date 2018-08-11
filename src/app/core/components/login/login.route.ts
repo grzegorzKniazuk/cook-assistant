@@ -11,4 +11,4 @@ const LOGIN_ROUTES: Routes = [
     ]},
 ];
 
-export const loginRouterModule = RouterModule.forChild(LOGIN_ROUTES);
+export const loginRoute = RouterModule.forChild(LOGIN_ROUTES);

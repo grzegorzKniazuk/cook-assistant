@@ -4,12 +4,12 @@ import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { LoginModule } from './components/login/login.module';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { Error404Component } from './components/error404/error404.component';
-import { coreRoute } from './core-route';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent} from './components/register/register.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
+import { coreRoute } from './core.route';
+import {DashboardModule} from './components/dashboard/dashboard.module';
 
 @NgModule({
   imports: [
@@ -18,13 +18,13 @@ import { SharedModule } from '../shared/shared.module';
     BrowserModule,
     CommonModule,
     LoginModule,
+    DashboardModule,
     coreRoute,
   ],
   declarations: [
     ShowcaseComponent,
     HomepageComponent,
     Error404Component,
-    DashboardComponent,
     RegisterComponent,
   ],
 })

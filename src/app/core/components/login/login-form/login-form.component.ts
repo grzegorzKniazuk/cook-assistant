@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +12,7 @@ export class LoginFormComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private httpCLient: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -21,9 +22,11 @@ export class LoginFormComponent implements OnInit {
   }
 
   public login(): void {
-    this.httpCLient.post('http://localhost:3000/login', {
-      username: this.loginForm.get('username').value,
-      password: this.loginForm.get('password').value,
-    }).subscribe((res) => console.log(res));
+
+    if (this.loginForm.valid) {
+      this.authService
+        .login(this.loginForm.get('username').value, this.loginForm.get('password').value)
+        .subscribe();
+    }
   }
 }

@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginRecoveryComponent} from './login-recovery/login-recovery.component';
-import { loginRouterModule } from './login-route.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../../shared/shared.module';
+import { loginRoute } from './login.route';
 
 @NgModule({
   imports: [
     CommonModule,
-    loginRouterModule,
     ReactiveFormsModule,
     SharedModule,
+    loginRoute,
   ],
   declarations: [
     LoginComponent,
