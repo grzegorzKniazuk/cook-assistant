@@ -15,8 +15,8 @@ const CHECKBOX_VALUE_ACCESSOR: any = {
 
 export class CheckboxComponent implements ControlValueAccessor {
 
-  _onChange: (_: any) => {};
-  _onTouched: () => {};
+  public _onChange: (_: any) => {};
+  public _onTouched: () => {};
   @ViewChild('checkbox') private checkboxElement: ElementRef;
 
   constructor(private _renderer: Renderer2) {}
