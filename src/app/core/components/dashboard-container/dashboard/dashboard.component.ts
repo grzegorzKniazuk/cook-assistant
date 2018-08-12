@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
-import {User} from '../../../interfaces/user';
+import { User } from '../../../interfaces/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +11,7 @@ import {User} from '../../../interfaces/user';
 export class DashboardComponent {
 
   public userData: User;
+
   constructor(private authService: AuthService, private userService: UserService) {}
 
   public logout(): void {
