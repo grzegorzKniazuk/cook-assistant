@@ -18,9 +18,9 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     BrowserModule,
     CommonModule,
-    LoginModule,
-    DashboardContainerModule,
     CoreRouteModule,
+    DashboardContainerModule,
+    LoginModule,
     RouterModule,
   ],
   declarations: [

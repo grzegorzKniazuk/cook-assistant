@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
-import {CanLoad, Route, Router} from '@angular/router';
+import { CanLoad, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthLoadGuard implements CanLoad {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
-    console.log(this.authService.isLoggedIn());
-    if (this.authService.isLoggedIn()) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
-    }
+    return <Observable<boolean>>this.authService.isLoggedIn().pipe(map(response => response));
   }
 }
