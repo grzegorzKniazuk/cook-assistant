@@ -11,6 +11,7 @@ import { AuthActivateGuard } from './core/guards/auth-activate.guard';
 import { AuthLoadGuard } from './core/guards/auth-load.guard';
 import { AppRouteModule } from './app-route.module';
 import { RouterModule } from '@angular/router';
+import { NotificationService } from './core/services/notification.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RouterModule } from '@angular/router';
     UserService,
     AuthActivateGuard,
     AuthLoadGuard,
+    NotificationService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true },
   ],

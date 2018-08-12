@@ -1,0 +1,100 @@
+app-user-notification {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  border-radius: $border-radius;
+  padding: 15px 25px;
+
+  &.small {
+    font-size: $paragraph-footer;
+  }
+
+  &.normal {
+    font-size: $paragraph;
+  }
+
+  &.big {
+    font-size: $headline-3;
+  }
+
+  &.success {
+    color: var(--success-alert-font);
+    background-color: var(--success-alert);
+    border: $border-radius solid var(--success-alert);
+    a {
+      color: var(--success-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.warning {
+    color: var(--warning-alert-font);
+    background-color: var(--warning-alert);
+    border: $border-radius solid var(--warning-alert);
+    a {
+      color: var(--warning-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.danger {
+    color: var(--danger-alert-font);
+    background-color: var(--danger-alert);
+    border: $border-radius solid var(--danger-alert);
+    a {
+      color: var(--danger-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.info {
+    color: var(--info-alert-font);
+    background-color: var(--info-alert);
+    border: $border-radius solid var(--info-alert);
+    a {
+      color: var(--info-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.primary {
+    color: var(--primary-alert-font);
+    background-color: var(--primary-alert);
+    border: $border-radius solid var(--primary-alert);
+    a {
+      color: var(--primary-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.secondary {
+    color: var(--secondary-alert-font);
+    background-color: var(--secondary-alert);
+    border: $border-radius solid var(--secondary-alert);
+    a {
+      color: var(--secondary-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.light {
+    color: var(--light-alert-font);
+    background-color: var(--light-alert);
+    border: $border-radius solid var(--light-alert);
+    a {
+      color: var(--light-alert-a);
+      text-decoration: underline;
+    }
+  }
+
+  &.dark {
+    color: var(--dark-alert-font);
+    background-color: var(--dark-alert);
+    border: $border-radius solid var(--dark-alert);
+    a {
+      color: var(--dark-alert-a);
+      text-decoration: underline;
+    }
+  }
+}
