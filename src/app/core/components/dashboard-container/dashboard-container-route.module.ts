@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthActivateGuard } from '../../guards/auth-activate.guard';
 
 const DASHBOARD_CONTAINER_ROUTES: Routes = [
-  { path: 'dashboard', component: DashboardContainerComponent, canActivate: [ AuthActivateGuard ], children: [
+  { path: '', component: DashboardContainerComponent, canActivate: [ AuthActivateGuard ], children: [
       { path: '', component: DashboardComponent, canActivate: [ AuthActivateGuard ] }
     ] },
 ];

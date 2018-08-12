@@ -4,6 +4,7 @@ import { HomepageComponent } from './core/components/homepage/homepage.component
 
 const APP_ROUTES: Routes = [
   { path: '', component: HomepageComponent },
+  { path: 'dashboard', loadChildren: './core/components/dashboard-container/dashboard-container.module#DashboardContainerModule'},
   { path: '**', redirectTo: 'error-404', pathMatch: 'full' },
 ];
 
