@@ -1,0 +1,6 @@
+<button class="danger ultra-big" (click)="logout()">Wyloguj</button>
+<button class="success ultra-big" (click)="getUserData()">Pobierz dane uzytkownika</button>
+<button class="secondary ultra-big" [routerLink]="['']">Strona główna</button>
+
+{{ userData?.username }}
+{{ userData?.email }}

@@ -8,8 +8,9 @@ import { RegisterComponent} from './components/register/register.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
-import { coreRoute } from './core.route';
-import {DashboardModule} from './components/dashboard/dashboard.module';
+import { DashboardContainerModule } from './components/dashboard-container/dashboard-container.module';
+import { CoreRouteModule } from './core-route.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import {DashboardModule} from './components/dashboard/dashboard.module';
     BrowserModule,
     CommonModule,
     LoginModule,
-    DashboardModule,
-    coreRoute,
+    DashboardContainerModule,
+    CoreRouteModule,
+    RouterModule,
   ],
   declarations: [
     ShowcaseComponent,

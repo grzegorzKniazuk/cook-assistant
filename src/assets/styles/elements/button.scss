@@ -6,6 +6,13 @@ button {
   cursor: pointer;
   outline: none;
 
+  &:disabled {
+    filter: grayscale(100%);
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
   &:focus {
     &:after {
       opacity: 0;

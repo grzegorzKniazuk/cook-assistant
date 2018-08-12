@@ -4,10 +4,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthService } from './core/services/auth.service';
-import { AuthGuard } from './core/guards/auth.guard';
-import { appRoute } from './app.route';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
+import { UserService } from './core/services/user.service';
+import { AuthActivateGuard } from './core/guards/auth-activate.guard';
+import { AuthLoadGuard } from './core/guards/auth-load.guard';
+import { AppRouteModule } from './app-route.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,16 @@ import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.inter
   ],
   imports: [
     BrowserModule,
-    CoreModule,
     HttpClientModule,
-    appRoute,
+    CoreModule,
+    AppRouteModule,
+    RouterModule,
   ],
   providers: [
     AuthService,
-    AuthGuard,
+    UserService,
+    AuthActivateGuard,
+    AuthLoadGuard,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true },
   ],

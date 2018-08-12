@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { shareReplay, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   public login(username: string, password: string): Observable<User> {
     return this.httpClient
@@ -21,19 +22,15 @@ export class AuthService {
   }
 
   private setSession(response): void {
-    console.log(response.idToken);
-    localStorage.setItem('id_token', response.idToken);
+    localStorage.setItem('token', response.token);
   }
 
   public logout(): void {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
   }
 
-  public isLoggedIn() {
-    return this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'idToken': localStorage.getItem('id_token')});
-  }
-
-  isLoggedOut() {
-    return !this.isLoggedIn();
+  public isLoggedIn(): Observable<boolean> {
+    return this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'token': localStorage.getItem('token')});
   }
 }

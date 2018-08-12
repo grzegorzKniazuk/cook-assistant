@@ -15,6 +15,9 @@ export class LoginFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
+    }
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -22,11 +25,12 @@ export class LoginFormComponent implements OnInit {
   }
 
   public login(): void {
-
     if (this.loginForm.valid) {
       this.authService
         .login(this.loginForm.get('username').value, this.loginForm.get('password').value)
-        .subscribe();
+        .subscribe(() => {
+          this.router.navigate(['dashboard']);
+        });
     }
   }
 }
