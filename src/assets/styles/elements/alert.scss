@@ -1,21 +1,15 @@
-app-user-notification {
+.alert {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   height: 25px;
   border-radius: $border-radius;
-  padding: 15px 25px;
+  font-size: $paragraph;
+  padding: 10px 20px;
+  opacity: 0;
 
-  &.small {
-    font-size: $paragraph-footer;
-  }
-
-  &.normal {
-    font-size: $paragraph;
-  }
-
-  &.big {
-    font-size: $headline-3;
+  &.visible {
+    opacity: 1;
   }
 
   &.success {

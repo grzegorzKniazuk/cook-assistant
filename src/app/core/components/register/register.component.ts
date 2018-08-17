@@ -1,26 +1,24 @@
-import {AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { AlertComponent } from '../../../shared/components/alert/alert.component';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit {
 
-  public registerForm: FormGroup;
   @ViewChild('notify', { read: ViewContainerRef }) private notifyContainer: ViewContainerRef;
-
+  public registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private componentFactoryResolver: ComponentFactoryResolver,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit() {
-
     this.registerForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -39,10 +37,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         return null;
       }
     });
-  }
-
-  ngAfterViewInit() {
-    this.showSuccess();
+    this.alertService.success(this.notifyContainer, `Gratulacje! Konto zostało utworzone. Kliknij tutaj, aby się zalogować.`);
   }
 
   public register(): void {
@@ -51,11 +46,5 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       password: this.registerForm.get('password').value,
       email: this.registerForm.get('email').value,
     });
-  }
-
-  private showSuccess(): void {
-    this.notifyContainer.clear();
-    const notifyComponentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
-    this.notifyContainer.createComponent(notifyComponentFactory);
   }
 }

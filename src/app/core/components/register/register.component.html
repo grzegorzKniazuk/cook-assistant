@@ -40,9 +40,8 @@
       <button class="fixed primary" [disabled]="registerForm.invalid" (click)="register()">Załóż konto</button>
     </div>
   </div>
-  <ng-container #notify>
-    <app-user-notification class="normal success">Gratulacje! Konto zostało utworzone. Kliknij <a [routerLink]="['/login']">tutaj</a>, aby się zalogować.</app-user-notification>
-  </ng-container>
+  <div class="notify">
+    <ng-container #notify></ng-container>
+  </div>
 </div>
-
 

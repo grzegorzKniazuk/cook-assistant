@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { AlertType } from '../../../core/enums/alert.enum';
 
 @Component({
   selector: 'app-user-notification',
   templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlertComponent {}
+export class AlertComponent {
+  @Input() public type: AlertType;
+  @Input() public message: string;
+}

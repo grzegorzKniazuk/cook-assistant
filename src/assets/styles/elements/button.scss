@@ -14,6 +14,7 @@ button {
   }
 
   &:focus {
+    border: none;
     &:after {
       opacity: 0;
       content: '';
