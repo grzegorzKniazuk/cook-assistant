@@ -12,25 +12,38 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center center;
-}
 
-.login-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 350px;
-  height: 350px;
-  border: 2px solid var(--light);
-  border-radius: 2px;
-  background: var(--light);
-  animation: show-login-form 250ms ease-in;
-}
+  .login-form-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    border: 2px solid var(--light);
+    border-radius: 2px;
+    background: var(--light);
+    animation: show-login-form 250ms ease-in;
 
-h1 {
-  color: var(--white);
-  margin-bottom: 15px;
-  animation: show-login-form 250ms ease-in;
+    .notify {
+      position: absolute;
+      bottom: -60px;
+      width: 350px;
+      opacity: 0;
+      transition: opacity 250ms ease-out;
+      &.visible {
+        opacity: 1;
+        transition: opacity 250ms ease-in;
+      }
+    }
+  }
+
+  h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+    animation: show-login-form 250ms ease-in;
+  }
 }
 
 @keyframes show-login-form {

@@ -39,9 +39,10 @@
     <div>
       <button class="fixed primary" [disabled]="registerForm.invalid" (click)="register()">Załóż konto</button>
     </div>
+    <div class="notify">
+      <ng-container #notify></ng-container>
+    </div>
   </div>
-  <div class="notify">
-    <ng-container #notify></ng-container>
-  </div>
+
 </div>
 

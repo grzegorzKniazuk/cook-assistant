@@ -20,6 +20,7 @@
   }
 
   .register-form-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +61,15 @@
     }
   }
   .notify {
-    margin-top: 50px;
+    position: absolute;
+    bottom: -60px;
+    width: 500px;
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+    &.visible {
+      opacity: 1;
+      transition: opacity 250ms ease-in;
+    }
   }
 }
 

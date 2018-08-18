@@ -2,5 +2,8 @@
 <button class="success ultra-big" (click)="getUserData()">Pobierz dane uzytkownika</button>
 <button class="secondary ultra-big" [routerLink]="['/']">Strona główna</button>
 
-{{ userData?.username }}
-{{ userData?.email }}
+{{ (userData | async)?.username }}
+{{ (userData | async)?.email }}
+<div class="dashboardMessages">
+  <ng-container #dashboardMessages></ng-container>
+</div>

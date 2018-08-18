@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { AlertService } from '../../services/alert.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,11 +16,18 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private userService: UserService,
     private alertService: AlertService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
+    this.buildLoginForm();
+    this.handleMessages();
+  }
+
+  private buildLoginForm(): void {
     this.registerForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -37,14 +46,35 @@ export class RegisterComponent implements OnInit {
         return null;
       }
     });
-    this.alertService.success(this.notifyContainer, `Gratulacje! Konto zostało utworzone. Kliknij tutaj, aby się zalogować.`);
   }
 
-  public register(): void {
-    this.userService.registerUser({
-      username: this.registerForm.get('username').value,
-      password: this.registerForm.get('password').value,
-      email: this.registerForm.get('email').value,
+  private handleMessages(): void {
+    this.alertService.onError$.subscribe((errorCode: string) => {
+      if (errorCode === 'Aleready registered') {
+        this.alertService.danger(this.notifyContainer, 'Nazwa użytkownika lub adres e-mail są już zajęte.');
+      } else if (errorCode === 'Blank') {
+        this.alertService.danger(this.notifyContainer, 'Proszę wypełnić wszystkie pola formularza.');
+      }
     });
+    this.alertService.onSuccess$.subscribe((successCode: string) => {
+      if (successCode === 'Register successful') {
+        this.authService.login(this.registerForm.get('username').value, this.registerForm.get('password').value).subscribe(() => {
+          this.router.navigate(['dashboard']);
+        });
+      }
+    });
+  }
+
+  @HostListener('document:keyup.enter')
+  public register(): void {
+    if (this.registerForm.valid) {
+      this.userService.registerUser({
+        username: this.registerForm.get('username').value,
+        password: this.registerForm.get('password').value,
+        email: this.registerForm.get('email').value,
+      });
+    } else {
+      this.alertService.onError$.next('Blank');
+    }
   }
 }

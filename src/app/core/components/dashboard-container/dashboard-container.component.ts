@@ -1,8 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-dashboard-container',
   templateUrl: './dashboard-container.component.html',
   styleUrls: ['./dashboard-container.component.scss'],
 })
-export class DashboardContainerComponent {}
+export class DashboardContainerComponent implements OnInit {
+
+  constructor(private alertService: AlertService) {}
+
+  public ngOnInit(): void {
+    this.alertService.onSuccess$.next('Successfully logged');
+  }
+}

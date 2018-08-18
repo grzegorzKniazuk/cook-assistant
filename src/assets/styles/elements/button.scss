@@ -6,13 +6,6 @@ button {
   cursor: pointer;
   outline: none;
 
-  &:disabled {
-    filter: grayscale(100%);
-    &:hover {
-      cursor: not-allowed;
-    }
-  }
-
   &:focus {
     border: none;
     &:after {
@@ -194,6 +187,15 @@ button {
     &:focus {
       border: 2px solid darken(#343a40, 10%);
       transition: border 250ms ease-in-out;
+    }
+  }
+
+  &:disabled {
+    filter: grayscale(100%);
+    &:hover {
+      color: var(--secondary);
+      background-color: white;
+      cursor: not-allowed;
     }
   }
 }
