@@ -1,9 +1,15 @@
-<button class="danger ultra-big" (click)="logout()">Wyloguj</button>
-<button class="success ultra-big" (click)="getUserData()">Pobierz dane uzytkownika</button>
-<button class="secondary ultra-big" [routerLink]="['/']">Strona główna</button>
-
-{{ (userData | async)?.username }}
-{{ (userData | async)?.email }}
+<app-navigation></app-navigation>
+<router-outlet></router-outlet>
 <div class="dashboardMessages">
+  <img src="../../../../../assets/images/woman-chef.jpg">
   <ng-container #dashboardMessages></ng-container>
 </div>
+<!--
+<button class="danger ultra-big" (click)="logout()">Wyloguj</button>
+<button class="secondary ultra-big" [routerLink]="['']">Strona główna</button>
+
+{{ (userData$ | async)?.username }}
+{{ (userData$ | async)?.email }}
+
+-->
+

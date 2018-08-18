@@ -20,7 +20,6 @@ import { AlertService } from './core/services/alert.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-
     AppRouteModule,
     CoreModule,
     RouterModule,

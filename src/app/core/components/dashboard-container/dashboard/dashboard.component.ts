@@ -12,7 +12,7 @@ import {Observable} from 'rxjs';
 })
 export class DashboardComponent implements AfterViewInit {
 
-  public userData: Observable<User>;
+  public userData$: Observable<User> = this.userService.loadUserData();
   @ViewChild('dashboardMessages', { read: ViewContainerRef }) private dashboardMessages: ViewContainerRef;
 
   constructor(private authService: AuthService, private userService: UserService, private alertService: AlertService) {}
@@ -21,7 +21,7 @@ export class DashboardComponent implements AfterViewInit {
     setTimeout(() => {
       this.alertService.onSuccess$.subscribe((successCode: string) => {
         if (successCode === 'Successfully logged') {
-          this.alertService.success(this.dashboardMessages, 'Zalogowano pomyślnie!');
+          this.alertService.success(this.dashboardMessages, 'Witaj ponownie!');
         }
       });
     });
@@ -29,12 +29,5 @@ export class DashboardComponent implements AfterViewInit {
 
   public logout(): void {
     this.authService.logout();
-  }
-
-  public getUserData(): void {
-    this.userService.loadUserData().subscribe((data: User) => {
-      this.userData = data;
-      console.log(data);
-    });
   }
 }

@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, ViewChild, ViewContainerRef} from '@angular/core';
-import {AlertService} from './core/services/alert.service';
+import { AfterViewInit, Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { AlertService } from './core/services/alert.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,7 @@ import {AlertService} from './core/services/alert.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+
   @ViewChild('globalErrorContainer', { read: ViewContainerRef }) private globalErrorContainer: ViewContainerRef;
 
   constructor(private alertService: AlertService) {}

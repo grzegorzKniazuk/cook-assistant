@@ -23,6 +23,9 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
+    }
     this.buildLoginForm();
     this.handleMessages();
   }
