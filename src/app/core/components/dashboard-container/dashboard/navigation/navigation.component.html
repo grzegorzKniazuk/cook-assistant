@@ -13,7 +13,7 @@
       Witaj, <strong>{{(userData$ | async)?.username }}</strong>
     </ng-container>
     <ng-container content>
-      <div><i-user class="dropdown-icon"></i-user>Mój profil</div>
+      <div [routerLink]="['profile']"><i-user class="dropdown-icon"></i-user>Mój profil</div>
       <div (click)="logout()"><i-log-out class="dropdown-icon"></i-log-out>Wyloguj</div>
     </ng-container>
   </app-dropdown>

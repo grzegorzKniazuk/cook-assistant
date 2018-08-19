@@ -5,10 +5,13 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { IconsModule } from './icons.module';
+import { LogoHeaderComponent } from './components/logo-header/logo-header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     IconsModule,
   ],
   declarations: [
@@ -16,6 +19,7 @@ import { IconsModule } from './icons.module';
     CheckboxComponent,
     AlertComponent,
     DropdownComponent,
+    LogoHeaderComponent,
   ],
   entryComponents: [
     AlertComponent,
@@ -25,6 +29,7 @@ import { IconsModule } from './icons.module';
     CheckboxComponent,
     AlertComponent,
     DropdownComponent,
+    LogoHeaderComponent,
     IconsModule,
   ]
 })

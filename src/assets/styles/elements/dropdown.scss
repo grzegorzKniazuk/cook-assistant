@@ -72,4 +72,14 @@
   }
 }
 
+@media screen and (max-width: 720px) {
+  .dropdown {
+    span {
+      display: none;
+    }
+    .dropdown-content {
+      width: 150px;
+    }
+  }
+}
 

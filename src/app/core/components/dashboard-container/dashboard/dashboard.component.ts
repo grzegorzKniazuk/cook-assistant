@@ -1,14 +1,15 @@
-import {AfterViewInit, Component, ViewChild, ViewContainerRef} from '@angular/core';
-import { AuthService } from '../../../services/auth.service';
-import { UserService } from '../../../services/user.service';
-import { User } from '../../../interfaces/user';
-import { AlertService } from '../../../services/alert.service';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef} from '@angular/core';
+import {AuthService} from '../../../services/auth.service';
+import {UserService} from '../../../services/user.service';
+import {User} from '../../../interfaces/user';
+import {AlertService} from '../../../services/alert.service';
 import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements AfterViewInit {
 

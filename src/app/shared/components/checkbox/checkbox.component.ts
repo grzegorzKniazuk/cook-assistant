@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, forwardRef, Renderer2, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const CHECKBOX_VALUE_ACCESSOR: any = {
@@ -11,6 +11,7 @@ const CHECKBOX_VALUE_ACCESSOR: any = {
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   providers: [CHECKBOX_VALUE_ACCESSOR],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CheckboxComponent implements ControlValueAccessor {

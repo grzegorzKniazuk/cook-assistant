@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/partials/variables";
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+.logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 15px;
+  left: 15px;
+  height: 64px;
+  cursor: pointer;
+  animation: show-logo 250ms ease-in;
+
+  span {
+    font-family: 'Dancing Script', cursive;
+    font-size: $logo;
+    line-height: $logo;
+    color: var(--white);
+    margin-left: 15px;
+  }
+}
+
+@keyframes show-logo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

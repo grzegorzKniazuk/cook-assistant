@@ -10,8 +10,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     CommonModule,
     SharedModule,
-    DashboardModule,
     DashboardContainerRouteModule,
+    DashboardModule,
     RouterModule,
   ],
   declarations: [

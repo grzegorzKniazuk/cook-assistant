@@ -5,30 +5,36 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  min-width: 580px;
   height: 60px;
   background: var(--success-alert);
+  animation: show-navigation 250ms ease-in;
 
-  .logo {
-    cursor: pointer;
-    margin-left: 15px;
-    height: 45px;
-    width: 45px;
-    background-color: #007bff;
-  }
+  div {
+    display: inline-flex;
+    align-items: center;
+    .logo {
+      cursor: pointer;
+      margin-left: 15px;
+      height: 45px;
+      width: 45px;
+      background: url("../../../../../../assets/images/dish-45.png");
+    }
 
-  input {
-    margin-left: 20px;
-    font-size: $headline-1;
-    background-color: var(--success-alert);
-    height: 45px;
-    width: 700px;
-    border-bottom: 2px solid black;
-  }
+    input {
+      margin-left: 20px;
+      font-size: $headline-1;
+      background-color: var(--success-alert);
+      height: 45px;
+      width: 700px;
+      border-bottom: 2px solid black;
+    }
 
-  span {
-    font-size: $headline-1;
-    margin-left: 15px;
-    margin-right: 15px;
+    span {
+      font-size: $headline-1;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
   }
 
   app-dropdown {
@@ -37,59 +43,78 @@ nav {
   }
 }
 
-@keyframes focus {
+@keyframes show-navigation {
   0% {
-    border-bottom: 1px solid var(--dark);
+    opacity: 0;
   }
   100% {
-    border-bottom: 1px solid var(--primary);
+    opacity: 1;
   }
 }
 
 @media screen and (max-width: 1280px) {
   nav {
-    input {
-      width: 500px;
-      font-size: $headline-2;
-    }
-    span {
-      font-size: $headline-2;
+    div {
+      input {
+        width: 500px;
+        font-size: $headline-2;
+      }
+      span {
+        font-size: $headline-2;
+      }
     }
   }
 }
 
 @media screen and (max-width: 1024px) {
   nav {
-    input {
-      width: 400px;
+    div {
+      input {
+        width: 400px;
+      }
     }
   }
 }
 
 @media screen and (max-width: 940px) {
   nav {
-    input {
-      width: 300px;
-      font-size: $paragraph;
-    }
-    span {
-      font-size: $paragraph;
+    div {
+      input {
+        width: 300px;
+        font-size: $paragraph;
+      }
+      span {
+        font-size: $paragraph;
+      }
     }
   }
 }
 
 @media screen and (max-width: 840px) {
   nav {
-    input {
-      width: 250px;
-      font-size: $paragraph-footer;
+    div {
+      input {
+        width: 250px;
+        font-size: $paragraph-footer;
+      }
+      span {
+        font-size: $paragraph-footer;
+      }
+      button {
+        padding: 4px 10px;
+        font-size: $paragraph-footer;
+      }
     }
-    span {
-      font-size: $paragraph-footer;
-    }
-    button {
-      padding: 4px 10px;
-      font-size: $paragraph-footer;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  nav {
+    div {
+      button {
+        padding: 2px 5px;
+        font-size: $paragraph-footer;
+      }
     }
   }
 }
