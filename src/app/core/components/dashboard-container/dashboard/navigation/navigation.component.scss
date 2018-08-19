@@ -3,6 +3,7 @@
 nav {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
   background: var(--success-alert);
@@ -20,13 +21,8 @@ nav {
     font-size: $headline-1;
     background-color: var(--success-alert);
     height: 45px;
-    min-width: 700px;
+    width: 700px;
     border-bottom: 2px solid black;
-
-    &:focus {
-      animation: focus 250ms ease-in;
-      border-bottom: 2px solid var(--primary);
-    }
   }
 
   span {
@@ -35,9 +31,9 @@ nav {
     margin-right: 15px;
   }
 
-  button:last-of-type {
-    position: absolute;
-    right: 20px;
+  app-dropdown {
+    position: relative;
+    margin-right: 15px;
   }
 }
 
@@ -49,3 +45,52 @@ nav {
     border-bottom: 1px solid var(--primary);
   }
 }
+
+@media screen and (max-width: 1280px) {
+  nav {
+    input {
+      width: 500px;
+      font-size: $headline-2;
+    }
+    span {
+      font-size: $headline-2;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    input {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  nav {
+    input {
+      width: 300px;
+      font-size: $paragraph;
+    }
+    span {
+      font-size: $paragraph;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  nav {
+    input {
+      width: 250px;
+      font-size: $paragraph-footer;
+    }
+    span {
+      font-size: $paragraph-footer;
+    }
+    button {
+      padding: 4px 10px;
+      font-size: $paragraph-footer;
+    }
+  }
+}
+

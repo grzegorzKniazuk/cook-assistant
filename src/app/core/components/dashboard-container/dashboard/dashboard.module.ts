@@ -5,10 +5,12 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { CookRecipeTableComponent } from './cook-recipe-table/cook-recipe-table.component';
 import { DashboardRouteModule } from './dashboard-route.module';
+import { SharedModule } from '../../../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     DashboardRouteModule,
     RouterModule,
   ],
