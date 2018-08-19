@@ -5,7 +5,7 @@
     </div>
     <input type="search" id="search" class="ultra-big" formControlName="search" placeholder="Wyszukaj według składników lub nazwy">
     <span>lub</span>
-    <button class="big success">Dodaj nowy przepis</button>
+    <button class="big success" [routerLink]="['add']">Dodaj nowy przepis</button>
   </div>
 
   <app-dropdown>
@@ -13,7 +13,7 @@
       Witaj, <strong>{{(userData$ | async)?.username }}</strong>
     </ng-container>
     <ng-container content>
-      <div [routerLink]="['profile']"><i-user class="dropdown-icon"></i-user>Mój profil</div>
+      <div><i-user class="dropdown-icon"></i-user>Mój profil</div>
       <div (click)="logout()"><i-log-out class="dropdown-icon"></i-log-out>Wyloguj</div>
     </ng-container>
   </app-dropdown>

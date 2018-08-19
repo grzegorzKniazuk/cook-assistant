@@ -20,3 +20,5 @@ export class AppComponent implements AfterViewInit {
     });
   }
 }
+
+// TODO do zrobienia unsubscribe, todos, 404, nowy panel

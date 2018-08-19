@@ -1,4 +1,18 @@
-<button [routerLink]="['login']" class="ultra-big success">Logowanie</button>
-<button [routerLink]="['register']" class="ultra-big success">Rejestracja</button>
-<button [routerLink]="['showcase']" class="ultra-big success">Showcase</button>
-<button [routerLink]="['dashboard']" class="ultra-big success">Dashboard</button>
+<div>
+  <app-logo-header></app-logo-header>
+  <nav>
+    <ng-template #notLogged>
+      <button [routerLink]="['login']" class="ultra-big info">Logowanie</button>
+      <button [routerLink]="['register']" class="ultra-big info">Rejestracja</button>
+    </ng-template>
+    <ng-container *ngIf="isLogged$ | async; else notLogged">
+      <button [routerLink]="['dashboard']" class="ultra-big info">Panel użytkownika</button>
+    </ng-container>
+  </nav>
+  <main>
+
+  </main>
+  <footer>
+    <img *ngFor="let icon of socialIcons" [src]="icon">
+  </footer>
+</div>

@@ -1,9 +1,9 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef} from '@angular/core';
-import {AuthService} from '../../../services/auth.service';
-import {UserService} from '../../../services/user.service';
-import {User} from '../../../interfaces/user';
-import {AlertService} from '../../../services/alert.service';
-import {Observable} from 'rxjs';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../interfaces/user';
+import { AlertService } from '../../../services/alert.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +13,7 @@ import {Observable} from 'rxjs';
 })
 export class DashboardComponent implements AfterViewInit {
 
+  public womanChefClipart = '../../../../../assets/images/woman-chef.jpg';
   public userData$: Observable<User> = this.userService.loadUserData();
   @ViewChild('dashboardMessages', { read: ViewContainerRef }) private dashboardMessages: ViewContainerRef;
 
@@ -26,9 +27,5 @@ export class DashboardComponent implements AfterViewInit {
         }
       });
     });
-  }
-
-  public logout(): void {
-    this.authService.logout();
   }
 }

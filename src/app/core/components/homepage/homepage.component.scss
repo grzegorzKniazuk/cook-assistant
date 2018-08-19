@@ -1,0 +1,72 @@
+div {
+  background: url("../../../../assets/images/homepage/homepage-background-2.jpg");
+  height: 100vh;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+
+  nav {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    animation: show-elements 250ms ease-in;
+  }
+
+  main {
+    display: block;
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-60%);
+    border-radius: 8px;
+    width: 960px;
+    height: 580px;
+    background-color: var(--info);
+    animation: show-elements 250ms ease-in;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    img {
+      margin-left: 5px;
+      cursor: pointer;
+      transform: rotate(0);
+      animation: rotate-off 50ms ease-in;
+      &:hover {
+        transform: rotate(25deg);
+        animation: rotate-on 50ms ease-in;
+      }
+    }
+  }
+}
+
+@keyframes show-elements {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-on {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+@keyframes rotate-off {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+

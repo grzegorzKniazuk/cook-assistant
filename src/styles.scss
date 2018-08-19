@@ -1,4 +1,6 @@
 @import "./assets/styles/base";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+$source-sans-pro: 'Source Sans Pro', serif;
 
 h1 {
   font-size: $headline-1;
@@ -12,6 +14,15 @@ h3 {
   font-size: $headline-2;
 }
 
-body.preload * {
-  animation-duration: 0s !important;
+* {
+  font-family: $source-sans-pro;
 }
+
+*:focus {
+  border: none;
+}
+
+
+
+
+

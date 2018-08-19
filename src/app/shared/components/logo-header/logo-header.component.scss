@@ -11,6 +11,16 @@
   cursor: pointer;
   animation: show-logo 250ms ease-in;
 
+  img {
+    transform: rotate(0);
+    animation: rotate-off 50ms ease-out;
+
+    &:hover {
+      transform: rotate(25deg);
+      animation: rotate-on 50ms ease-out;
+    }
+  }
+
   span {
     font-family: 'Dancing Script', cursive;
     font-size: $logo;
@@ -26,5 +36,22 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes rotate-on {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+@keyframes rotate-off {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(25deg);
   }
 }

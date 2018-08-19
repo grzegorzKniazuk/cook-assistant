@@ -13,16 +13,13 @@ const APP_ROUTES: Routes = [
     loadChildren: './core/components/dashboard-container/dashboard-container.module#DashboardContainerModule',
     canLoad: [ AuthLoadGuard ],
   },
-  {
-    path: '**',
-    redirectTo: 'error-404',
-    pathMatch: 'full',
-  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, {
+      // enableTracing: true, // TODO do ustalenia problem z routem
+    }),
   ],
   exports: [
     RouterModule,
