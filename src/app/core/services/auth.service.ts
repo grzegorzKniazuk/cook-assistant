@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { shareReplay, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { User } from '../interfaces/user';
 import { Router } from '@angular/router';
+import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router, private alertService: AlertService) { }
 
   public login(username: string, password: string): Observable<User> {
     return this.httpClient
@@ -27,10 +28,24 @@ export class AuthService {
 
   public logout(): void {
     localStorage.removeItem('token');
-    this.router.navigateByUrl('/login');
+    this.router.navigate(['login']);
   }
 
-  public isLoggedIn(): Observable<boolean> {
-    return this.httpClient.post<any>('http://localhost:3000/isLoggedIn', {'token': localStorage.getItem('token')});
+  public isLoggedIn(): Observable<boolean> { // TODO jak nie dziala isLoggedIn to tu
+    return this.httpClient.post<boolean>('http://localhost:3000/isLoggedIn', {'token': localStorage.getItem('token')});
+  }
+
+  public register({username, password, email}: User): Subscription {
+    return this.httpClient.post('http://localhost:3000/register', {
+      username: username,
+      password: password,
+      email: email,
+    }, { responseType: 'text'}).subscribe((response: string) => {
+      if (response === 'Register successful') {
+        this.alertService.onSuccess$.next('Register successful');
+      } else if (response === 'Already registered') {
+        this.alertService.onError$.next('Already registered');
+      }
+    });
   }
 }

@@ -1,19 +1,22 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { AlertService } from '../../services/alert.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
 
   @ViewChild('notify', { read: ViewContainerRef }) private notifyContainer: ViewContainerRef;
+  private registerSubscription$: Subscription;
+  private onError$: Subscription;
+  private onSuccess$: Subscription;
   public registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -26,6 +29,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.buildLoginForm();
     this.handleMessages();
+  }
+
+  ngOnDestroy() {
+    this.registerSubscription$.unsubscribe();
+    this.onError$.unsubscribe();
+    this.onSuccess$.unsubscribe();
   }
 
   private buildLoginForm(): void {
@@ -50,14 +59,14 @@ export class RegisterComponent implements OnInit {
   }
 
   private handleMessages(): void {
-    this.alertService.onError$.subscribe((errorCode: string) => {
-      if (errorCode === 'Aleready registered') {
+    this.onError$ = this.alertService.onError$.subscribe((errorCode: string) => {
+      if (errorCode === 'Already registered') {
         this.alertService.danger(this.notifyContainer, 'Nazwa użytkownika lub adres e-mail są już zajęte.');
       } else if (errorCode === 'Blank') {
         this.alertService.danger(this.notifyContainer, 'Proszę wypełnić wszystkie pola formularza.');
       }
     });
-    this.alertService.onSuccess$.subscribe((successCode: string) => {
+    this.onSuccess$ = this.alertService.onSuccess$.subscribe((successCode: string) => {
       if (successCode === 'Register successful') {
         this.authService.login(this.registerForm.get('username').value, this.registerForm.get('password').value).subscribe(() => {
           this.router.navigate(['dashboard']);
@@ -69,7 +78,7 @@ export class RegisterComponent implements OnInit {
   @HostListener('document:keyup.enter')
   public register(): void {
     if (this.registerForm.valid) {
-      this.userService.registerUser({
+      this.registerSubscription$ = this.authService.register({
         username: this.registerForm.get('username').value,
         password: this.registerForm.get('password').value,
         email: this.registerForm.get('email').value,
