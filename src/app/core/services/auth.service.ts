@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   public register({username, password, email}: User): Subscription {
-    return this.httpClient.post('http://localhost:3000/register', {
+    return this.httpClient.post('http://localhost:3000/register-container', {
       username: username,
       password: password,
       email: email,

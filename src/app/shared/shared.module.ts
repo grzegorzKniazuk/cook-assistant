@@ -31,6 +31,7 @@ import { RouterModule } from '@angular/router';
     DropdownComponent,
     LogoHeaderComponent,
     IconsModule,
+    CommonModule,
   ]
 })
 export class SharedModule { }

@@ -1,8 +1,8 @@
 import { Component, HostListener, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../services/user.service';
-import { AlertService } from '../../services/alert.service';
-import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../../services/user.service';
+import { AlertService } from '../../../services/alert.service';
+import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -32,7 +32,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.registerSubscription$.unsubscribe();
+    if (this.registerSubscription$) {
+      this.registerSubscription$.unsubscribe();
+    }
     this.onError$.unsubscribe();
     this.onSuccess$.unsubscribe();
   }

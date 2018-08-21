@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginRecoveryComponent} from './login-recovery/login-recovery.component';
@@ -10,7 +9,6 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     SharedModule,
     LoginRouteModule,
