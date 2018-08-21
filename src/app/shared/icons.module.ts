@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { IconChevronDown, IconLogOut, IconUser } from 'angular-feather';
+import { IconChevronDown, IconList, IconLogOut, IconPlusCircle, IconUser } from 'angular-feather';
 
 const ICONS = [
   IconLogOut,
   IconUser,
   IconChevronDown,
+  IconList,
+  IconPlusCircle,
 ];
 
 @NgModule({

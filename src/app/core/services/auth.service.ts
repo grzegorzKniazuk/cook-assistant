@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { AlertService } from './alert.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
@@ -31,7 +31,7 @@ export class AuthService {
     this.router.navigate(['login']);
   }
 
-  public isLoggedIn(): Observable<boolean> { // TODO jak nie dziala isLoggedIn to tu
+  public isLoggedIn(): Observable<boolean> {
     return this.httpClient.post<boolean>('http://localhost:3000/isLoggedIn', {'token': localStorage.getItem('token')});
   }
 

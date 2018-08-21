@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(APP_ROUTES, {
-      // enableTracing: true, // TODO do ustalenia problem z routem
+      enableTracing: true, // TODO do ustalenia problem z routem
     }),
   ],
   exports: [

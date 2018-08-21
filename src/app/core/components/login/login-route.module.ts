@@ -12,12 +12,12 @@ const LOGIN_ROUTES: Routes = [
       { path: 'password-recovery', component: LoginRecoveryComponent},
     ]
   },
-  { path: 'error-404', component: Error404Component },
+/*  { path: 'error-404', component: Error404Component },
   {
     path: '**',
     redirectTo: 'error-404',
     pathMatch: 'full',
-  },
+  },*/
 ];
 
 @NgModule({
