@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
-import { LoginModule } from './components/login/login.module';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { Error404Component } from './components/error404/error404.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +14,6 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     BrowserModule,
     CoreRouteModule,
-    LoginModule,
     RouterModule,
   ],
   declarations: [

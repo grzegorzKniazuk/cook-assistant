@@ -1,4 +1,4 @@
-@import "../../../../assets/styles/partials/variables";
+@import "../../../../../assets/styles/partials/variables";
 
 .container {
   width: 100%;
@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("../../../../assets/images/login-background.jpg");
+  background-image: url("../../../../../assets/images/login-background.jpg");
   background-origin: content-box;
   background-repeat: no-repeat;
   background-size: 100%;

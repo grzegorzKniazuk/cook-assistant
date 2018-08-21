@@ -2,16 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { AuthLoadGuard } from './guards/auth-load.guard';
-import { LoginComponent } from './components/login/login.component';
-import { LoginFormComponent } from './components/login/login-form/login-form.component';
-import { LoginRecoveryComponent } from './components/login/login-recovery/login-recovery.component';
+import { LoginComponent } from './components/login-container/login/login.component';
 
 const CORE_ROUTES: Routes = [
   { path: 'login', component: LoginComponent,
-    children: [
-      { path: '', component: LoginFormComponent},
-      { path: 'password-recovery', component: LoginRecoveryComponent},
-    ]
+    loadChildren: './components/login-container/login-container.module#LoginContainerModule',
   },
   { path: 'register',
     loadChildren: './components/register-container/register-container.module#RegisterContainerModule',

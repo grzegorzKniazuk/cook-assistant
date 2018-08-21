@@ -15,7 +15,7 @@ export class AuthService {
 
   public login(username: string, password: string): Observable<User> {
     return this.httpClient
-      .post<User>('http://localhost:3000/login', {username, password})
+      .post<User>('http://localhost:3000/login-container', {username, password})
       .pipe(tap(response => {
         this.setSession(response);
       }))
