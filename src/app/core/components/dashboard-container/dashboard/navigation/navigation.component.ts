@@ -8,7 +8,6 @@ import { UserService } from '../../../../services/user.service';
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
-
 })
 export class NavigationComponent {
 

@@ -4,7 +4,6 @@ import { DashboardContainerComponent } from './dashboard-container.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthActivateGuard } from '../../guards/auth-activate.guard';
 import { RecipesListComponent } from './dashboard/recipes-list/recipes-list.component';
-import {DashboardContentComponent} from './dashboard/dashboard-content/dashboard-content.component';
 
 // TODO nie dziala tutaj route do przepisow
 const DASHBOARD_CONTAINER_ROUTES: Routes = [
@@ -17,7 +16,7 @@ const DASHBOARD_CONTAINER_ROUTES: Routes = [
         canActivate: [ AuthActivateGuard ],
       },
       { path: '',
-        component: DashboardContentComponent,
+        component: RecipesListComponent,
         canActivate: [ AuthActivateGuard ],
         outlet: 'dashboard-outlet',
       },

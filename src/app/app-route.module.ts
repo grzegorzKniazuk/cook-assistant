@@ -8,11 +8,7 @@ const APP_ROUTES: Routes = [
     path: '',
     component: HomepageComponent,
   },
-  {
-    path: 'dashboard',
-    loadChildren: './core/components/dashboard-container/dashboard-container.module#DashboardContainerModule',
-    canLoad: [ AuthLoadGuard ],
-  },
+
 ];
 
 @NgModule({
