@@ -7,8 +7,8 @@ import { LoginModule } from './login/login.module';
 @NgModule({
   imports: [
     CommonModule,
-    LoginModule,
     LoginContainerRouteModule,
+    LoginModule,
   ],
   declarations: [
     LoginContainerComponent,

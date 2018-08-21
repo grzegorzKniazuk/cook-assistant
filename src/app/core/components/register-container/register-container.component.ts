@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-register-container',
   templateUrl: './register-container.component.html',
-  styleUrls: ['./register-container.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class RegisterContainerComponent {}

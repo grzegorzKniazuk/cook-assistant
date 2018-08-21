@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { AuthLoadGuard } from './guards/auth-load.guard';
-import { LoginComponent } from './components/login-container/login/login.component';
 
 const CORE_ROUTES: Routes = [
-  { path: 'login', component: LoginComponent,
+  { path: 'login',
     loadChildren: './components/login-container/login-container.module#LoginContainerModule',
   },
   { path: 'register',
