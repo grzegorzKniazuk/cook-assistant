@@ -10,7 +10,6 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   public loadUserData(): Observable<User> {
     return this.httpClient.get<User>('http://localhost:3000/loadUserData');
   }

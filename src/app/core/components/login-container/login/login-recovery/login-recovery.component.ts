@@ -1,11 +1,10 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-recovery',
   templateUrl: './login-recovery.component.html',
   styleUrls: ['./login-recovery.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class LoginRecoveryComponent implements OnInit {

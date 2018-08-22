@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
 import { CoreRouteModule } from './core-route.module';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -14,7 +13,6 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     BrowserModule,
     CoreRouteModule,
-    RouterModule,
   ],
   declarations: [
     ShowcaseComponent,

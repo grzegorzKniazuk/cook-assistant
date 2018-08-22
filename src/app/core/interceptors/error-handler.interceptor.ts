@@ -4,8 +4,6 @@ import { catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { AlertService } from '../services/alert.service';
 
-
-// globalna obsluga bledow
 @Injectable()
 export class ErrorHandlerInterceptor implements HttpInterceptor {
 

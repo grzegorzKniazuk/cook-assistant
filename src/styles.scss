@@ -16,12 +16,14 @@ h3 {
 
 * {
   font-family: $source-sans-pro;
-}
 
-*:focus {
-  border: none;
+  &:focus {
+    border: none;
+  }
+  &:active {
+    border: none;
+  }
 }
-
 
 
 

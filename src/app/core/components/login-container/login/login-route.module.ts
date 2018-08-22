@@ -6,6 +6,7 @@ import { LoginRecoveryComponent } from './login-recovery/login-recovery.componen
 const LOGIN_ROUTES: Routes = [
   { path: '', component: LoginFormComponent },
   { path: 'password-recovery', component: LoginRecoveryComponent },
+
 ];
 
 @NgModule({

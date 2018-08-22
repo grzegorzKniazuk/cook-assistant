@@ -28,4 +28,4 @@ const CORE_ROUTES: Routes = [
     RouterModule,
   ]
 })
-export class CoreRouteModule { }
+export class CoreRouteModule {}

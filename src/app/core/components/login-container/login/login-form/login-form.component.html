@@ -12,6 +12,6 @@
 </form>
 <div>
   <button class="fixed primary" [disabled]="loginForm.invalid" (click)="login()">Zaloguj</button>
-  <button class="fixed secondary" routerLink="password-recovery">Przypomnij hasło</button>
+  <button class="fixed secondary" [routerLink]="['./password-recovery']">Przypomnij hasło</button>
 </div>
 
