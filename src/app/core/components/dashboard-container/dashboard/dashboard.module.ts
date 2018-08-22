@@ -5,6 +5,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     NavigationComponent,
     RecipesListComponent,
     AddRecipeComponent,
+    MyProfileComponent,
   ],
 })
 export class DashboardModule { }

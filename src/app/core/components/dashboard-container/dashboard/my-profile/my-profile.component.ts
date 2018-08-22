@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.scss'],
+  templateUrl: './my-profile.component.html',
+  styleUrls: ['./my-profile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddRecipeComponent {}
+export class MyProfileComponent {}

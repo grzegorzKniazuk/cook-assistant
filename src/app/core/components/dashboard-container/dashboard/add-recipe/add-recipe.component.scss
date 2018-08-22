@@ -1,0 +1,11 @@
+@import "../../../../../../assets/styles/partials/variables";
+
+form {
+  div {
+    display: flex;
+    flex-direction: column-reverse;
+    input {
+      background: var(--white);
+    }
+  }
+}

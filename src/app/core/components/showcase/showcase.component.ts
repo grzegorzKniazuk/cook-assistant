@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'app-showcase',
   templateUrl: './showcase.component.html',
-  styleUrls: ['./showcase.component.scss']
+  styleUrls: ['./showcase.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowcaseComponent {}

@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
-import { AlertService } from '../../../services/alert.service';
-import { Subscription } from 'rxjs';
+import {AfterViewInit, ChangeDetectionStrategy, Component, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
+import {AlertService} from '../../../services/alert.service';
+import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements AfterViewInit, OnDestroy {
 

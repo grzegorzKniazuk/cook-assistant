@@ -9,12 +9,11 @@ const APP_ROUTES: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(APP_ROUTES, {
-      preloadingStrategy: PreloadAllModules,
-      enableTracing: true,
+      // preloadingStrategy: PreloadAllModules,
     }),
   ],
   exports: [
     RouterModule,
   ]
 })
-export class AppRouteModule { }
+export class AppRouteModule {}

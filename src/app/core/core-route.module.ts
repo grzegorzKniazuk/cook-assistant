@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { AuthLoadGuard } from './guards/auth-load.guard';
-import {Error404Component} from './components/error404/error404.component';
 
 const CORE_ROUTES: Routes = [
   { path: 'login',
@@ -21,7 +20,7 @@ const CORE_ROUTES: Routes = [
   },
   {
     path: '404',
-    component: Error404Component,
+    loadChildren: './components/error404-container/error404-container.module#Error404ContainerModule',
   },
   {
     path: '**',

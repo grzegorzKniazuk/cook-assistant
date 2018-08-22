@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { AlertService } from '../../services/alert.service';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {AlertService} from '../../services/alert.service';
 
 @Component({
-  selector: 'app-dashboard-container',
   templateUrl: './dashboard-container.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardContainerComponent implements OnInit {
 
