@@ -7,19 +7,9 @@ import { RecipesListComponent } from './dashboard/recipes-list/recipes-list.comp
 
 // TODO nie dziala tutaj route do przepisow
 const DASHBOARD_CONTAINER_ROUTES: Routes = [
-  { path: '',
-    component: DashboardContainerComponent,
-    canActivate: [ AuthActivateGuard ],
-    children: [
-      { path: '',
-        component: DashboardComponent,
-        canActivate: [ AuthActivateGuard ],
-      },
-      { path: '',
-        component: RecipesListComponent,
-        canActivate: [ AuthActivateGuard ],
-        outlet: 'dashboard-outlet',
-      },
+  { path: '', component: DashboardContainerComponent, canActivate: [ AuthActivateGuard ], children: [
+      { path: '', component: DashboardComponent, canActivate: [ AuthActivateGuard ] },
+      { path: '', component: RecipesListComponent, canActivate: [ AuthActivateGuard ], outlet: 'dashboard-outlet' },
     ],
   }
 ];
