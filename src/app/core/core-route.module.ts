@@ -10,9 +10,6 @@ const CORE_ROUTES: Routes = [
   { path: 'register',
     loadChildren: './components/register-container/register-container.module#RegisterContainerModule',
   },
-  { path: 'showcase',
-    component: ShowcaseComponent,
-  },
   {
     path: 'dashboard',
     loadChildren: './components/dashboard-container/dashboard-container.module#DashboardContainerModule',
@@ -21,6 +18,9 @@ const CORE_ROUTES: Routes = [
   {
     path: '404',
     loadChildren: './components/error404-container/error404-container.module#Error404ContainerModule',
+  },
+  { path: 'showcase',
+    component: ShowcaseComponent,
   },
   {
     path: '**',

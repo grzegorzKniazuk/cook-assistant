@@ -1,10 +1,11 @@
-<form>
-  <div>
-    <app-validation-feedback controlName="name"></app-validation-feedback>
-    <input type="text" id="username" class="fixed" formControlName="name">
-    <label for="username">Name</label>
+<div>
+  <div class="steps-description">
+    <div *ngFor="let step of stepsDescription">{{ step }}</div>
   </div>
-  <div>
-
+  <div class="steps">
+    <div *ngFor="let i of [1,2,3,4]" [routerLink]="['step-'+i]" routerLinkActive="active">{{ i }}</div>
   </div>
-</form>
+  <form>
+    <router-outlet></router-outlet>
+  </form>
+</div>

@@ -1,11 +1,59 @@
 @import "../../../../../../assets/styles/partials/variables";
 
-form {
-  div {
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 122px);
+
+  .steps-description {
     display: flex;
-    flex-direction: column-reverse;
-    input {
-      background: var(--white);
+    flex-direction: column;
+    justify-content: start;
+    width: 100px;
+    height: 80%;
+    margin-right: 10px;
+
+    div {
+      display: flex;
+      justify-content: end;
+      font-size: $headline-3;
+      width: 100px;
+      height: 52px;
+      margin-bottom: 10px;
     }
   }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 65px;
+    height: 80%;
+    margin-right: 10px;
+    div {
+      font-size: $headline-3;
+      width: 50px;
+      height: 50px;
+      border: 2px solid var(--black);
+      margin-bottom: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      &.active {
+        border: 2px solid var(--success-alert);
+        box-shadow: 0 0 5px 0 var(--success-alert);
+        color: var(--success);
+        transition: color 250ms ease-in, ;
+      }
+    }
+  }
+  form {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    border: 1px solid var(--black);
+  }
 }
+

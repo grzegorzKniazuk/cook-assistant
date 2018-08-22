@@ -5,4 +5,6 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   styleUrls: ['./add-recipe.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddRecipeComponent {}
+export class AddRecipeComponent {
+  public readonly stepsDescription: string[] = [ 'Title', 'Photo', 'Ingredients', 'Description' ];
+}
