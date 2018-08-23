@@ -7,6 +7,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { IconsModule } from './icons.module';
 import { LogoHeaderComponent } from './components/logo-header/logo-header.component';
 import { RouterModule } from '@angular/router';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     AlertComponent,
     DropdownComponent,
     LogoHeaderComponent,
+    FileUploadComponent,
   ],
   entryComponents: [
     AlertComponent,
@@ -32,6 +34,7 @@ import { RouterModule } from '@angular/router';
     LogoHeaderComponent,
     IconsModule,
     CommonModule,
+    FileUploadComponent,
   ]
 })
 export class SharedModule { }

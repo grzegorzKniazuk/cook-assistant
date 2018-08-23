@@ -1,6 +1,14 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    background: var(--white);
+  }
+}
+
 button {
   position: absolute;
-  animation: show-elements 250ms ease-in;
   &:first-of-type {
     bottom: 15px;
     right: 104px;

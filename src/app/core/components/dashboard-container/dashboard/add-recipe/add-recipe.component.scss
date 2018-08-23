@@ -53,18 +53,9 @@ div {
   form {
     display: flex;
     position: relative;
-    width: 50%;
+    width: 60vw;
     height: 80%;
     border: 1px solid var(--black);
     animation: show-elements 250ms ease-in;
   }
 }
-
-@media screen and (max-width: 1000px) {
-  div {
-    form {
-      width: 70%;
-    }
-  }
-}
-
