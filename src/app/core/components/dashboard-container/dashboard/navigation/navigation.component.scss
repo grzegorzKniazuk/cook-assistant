@@ -8,7 +8,7 @@ nav {
   min-width: 450px;
   height: 60px;
   background: var(--success-alert);
-  animation: show-navigation 250ms ease-in;
+  animation: show-elements 250ms ease-in;
 
   div {
     display: inline-flex;
@@ -52,15 +52,6 @@ nav {
   app-dropdown {
     position: relative;
     margin-right: 15px;
-  }
-}
-
-@keyframes show-navigation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

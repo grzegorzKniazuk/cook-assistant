@@ -43,30 +43,3 @@ div {
     }
   }
 }
-
-@keyframes show-elements {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes rotate-on {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(25deg);
-  }
-}
-@keyframes rotate-off {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(25deg);
-  }
-}
-

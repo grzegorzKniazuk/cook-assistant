@@ -7,6 +7,7 @@ div {
   flex-direction: row;
   width: 100%;
   height: calc(100vh - 122px);
+  animation: show-elements 250ms ease-in;
 
   .steps-description {
     display: flex;
@@ -15,14 +16,14 @@ div {
     width: 100px;
     height: 80%;
     margin-right: 10px;
-
     div {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       font-size: $headline-3;
-      width: 100px;
+      margin-right: 45px;
+      width: 160px;
       height: 52px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
   }
 
@@ -41,19 +42,29 @@ div {
       margin-bottom: 10px;
       border-radius: 25px;
       cursor: pointer;
-      &.active {
+      &.step-active {
         border: 2px solid var(--success-alert);
         box-shadow: 0 0 5px 0 var(--success-alert);
         color: var(--success);
-        transition: color 250ms ease-in, ;
+        transition: color 250ms ease-in;
       }
     }
   }
   form {
     display: flex;
-    width: 80%;
+    position: relative;
+    width: 50%;
     height: 80%;
     border: 1px solid var(--black);
+    animation: show-elements 250ms ease-in;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  div {
+    form {
+      width: 70%;
+    }
   }
 }
 

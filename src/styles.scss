@@ -14,17 +14,37 @@ h3 {
   font-size: $headline-2;
 }
 
-* {
-  font-family: $source-sans-pro;
+.global-error-container {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
 
-  &:focus {
-    border: none;
-  }
-  &:active {
-    border: none;
+  &.visible {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
   }
 }
 
+* {
+  font-family: $source-sans-pro;
+  outline: none;
+  border: none;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+  &:active {
+    border: none;
+    outline: none;
+  }
+  &:hover {
+    outline: none;
+  }
+}
 
 
 

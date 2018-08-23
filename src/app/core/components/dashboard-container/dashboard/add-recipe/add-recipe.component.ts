@@ -1,10 +1,17 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RecipeFormService } from '../../../../services/recipe-form.service';
 
 @Component({
   templateUrl: './add-recipe.component.html',
   styleUrls: ['./add-recipe.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddRecipeComponent {
-  public readonly stepsDescription: string[] = [ 'Title', 'Photo', 'Ingredients', 'Description' ];
+export class AddRecipeComponent implements OnInit {
+
+  public readonly stepsDescription: string[] = [ 'Wprowadź tytuł', 'Dodaj zdjęcie', 'Przypisz kategorie', 'Dodaj składniki', 'Dodaj opis' ];
+
+  constructor(public recipeFormService: RecipeFormService) {}
+
+  public ngOnInit(): void {
+    this.recipeFormService.addRecipeFormInit();
+  }
 }

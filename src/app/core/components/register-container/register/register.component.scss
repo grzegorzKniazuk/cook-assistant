@@ -16,7 +16,7 @@
   h1 {
     color: var(--white);
     margin-bottom: 15px;
-    animation: show-register-form 250ms ease-in;
+    animation: show-elements 250ms ease-in;
   }
 
   .register-form-container {
@@ -30,7 +30,7 @@
     border: 2px solid var(--light);
     border-radius: 2px;
     background: var(--light);
-    animation: show-register-form 250ms ease-in;
+    animation: show-elements 250ms ease-in;
     margin-bottom: -40px;
 
     form {
@@ -70,14 +70,5 @@
       opacity: 1;
       transition: opacity 250ms ease-in;
     }
-  }
-}
-
-@keyframes show-register-form {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

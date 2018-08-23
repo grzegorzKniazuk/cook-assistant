@@ -3,9 +3,9 @@
     <div *ngFor="let step of stepsDescription">{{ step }}</div>
   </div>
   <div class="steps">
-    <div *ngFor="let i of [1,2,3,4]" [routerLink]="['step-'+i]" routerLinkActive="active">{{ i }}</div>
+    <div *ngFor="let i of [1,2,3,4,5]" [routerLink]="['step-'+i]" routerLinkActive="step-active">{{ i }}</div>
   </div>
-  <form>
+  <form [formGroup]="this.recipeFormService.addRecipeForm">
     <router-outlet></router-outlet>
   </form>
 </div>

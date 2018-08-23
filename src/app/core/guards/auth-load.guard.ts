@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthLoadGuard implements CanLoad {
 

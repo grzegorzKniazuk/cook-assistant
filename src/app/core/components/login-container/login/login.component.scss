@@ -24,7 +24,7 @@
     border: 2px solid var(--light);
     border-radius: 2px;
     background: var(--light);
-    animation: show-login-form 250ms ease-in;
+    animation: show-elements 250ms ease-in;
 
     .notify {
       position: absolute;
@@ -42,16 +42,7 @@
   h1 {
     color: var(--white);
     margin-bottom: 15px;
-    animation: show-login-form 250ms ease-in;
-  }
-}
-
-@keyframes show-login-form {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+    animation: show-elements 250ms ease-in;
   }
 }
 

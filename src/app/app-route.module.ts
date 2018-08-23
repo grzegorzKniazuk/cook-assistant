@@ -10,6 +10,7 @@ const APP_ROUTES: Routes = [
   imports: [
     RouterModule.forRoot(APP_ROUTES, {
       preloadingStrategy: NoPreloading,
+      enableTracing: false,
     }),
   ],
   exports: [

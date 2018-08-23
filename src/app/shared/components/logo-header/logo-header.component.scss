@@ -9,7 +9,7 @@
   left: 15px;
   height: 64px;
   cursor: pointer;
-  animation: show-logo 250ms ease-in;
+  animation: show-elements 250ms ease-in;
 
   img {
     transform: rotate(0);
@@ -27,31 +27,5 @@
     line-height: $logo;
     color: var(--white);
     margin-left: 15px;
-  }
-}
-
-@keyframes show-logo {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes rotate-on {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(25deg);
-  }
-}
-@keyframes rotate-off {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(25deg);
   }
 }

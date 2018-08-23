@@ -12,6 +12,7 @@ import { AuthLoadGuard } from './core/guards/auth-load.guard';
 import { AppRouteModule } from './app-route.module';
 import { RouterModule } from '@angular/router';
 import { AlertService } from './core/services/alert.service';
+import { RecipeFormService } from './core/services/recipe-form.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { AlertService } from './core/services/alert.service';
   providers: [
     AuthService,
     UserService,
+    AlertService,
+    RecipeFormService,
     AuthActivateGuard,
     AuthLoadGuard,
-    AlertService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true },
   ],

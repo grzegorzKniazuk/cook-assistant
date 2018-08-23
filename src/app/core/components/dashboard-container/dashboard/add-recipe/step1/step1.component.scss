@@ -1,0 +1,17 @@
+div {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+  height: 70px;
+
+  input {
+    background: var(--white);
+  }
+}
+
+button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  animation: show-elements 250ms ease-in;
+}
