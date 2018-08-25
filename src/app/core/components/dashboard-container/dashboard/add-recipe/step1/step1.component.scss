@@ -1,16 +1,4 @@
-div {
-  display: flex;
-  position: relative;
-  align-items: center;
-  flex-direction: column-reverse;
-  height: 70px;
-  width: 60vw;
-
-  input {
-    width: 50vw;
-    background: var(--white);
-  }
-}
+@import "../../../../../../../assets/styles/partials/variables";
 
 button {
   position: absolute;

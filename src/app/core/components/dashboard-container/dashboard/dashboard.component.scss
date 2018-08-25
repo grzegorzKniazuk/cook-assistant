@@ -1,28 +1,35 @@
 @import "../../../../../assets/styles/partials/variables";
 
-.dashboardMessages {
-  position: fixed;
-  display: inline-flex;
-  flex-direction: row;
-  padding: 0 20px;
-  background-color: var(--success-alert);
-  border: $border-radius solid var(--success-alert);
-  width: 115px;
-  left: 180px;
-  bottom: 130px;
-  opacity: 0;
-  transition: opacity 500ms ease-out;
-  z-index: 1;
+.dashboard-wrapper {
+  width: 100%;
+  height: 100vh;
 
-  img {
-    display: inline-flex;
+  .dashboard-messages {
     position: fixed;
-    left: 10px;
-    bottom: 0;
-  }
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0 20px;
+    background-color: var(--success-alert);
+    border: $border-radius solid var(--success-alert);
+    width: 115px;
+    left: 180px;
+    bottom: 130px;
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+    z-index: 1;
 
-  &.visible {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
+    img {
+      display: inline-flex;
+      position: fixed;
+      left: 10px;
+      bottom: 0;
+    }
+
+    &.visible {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
   }
 }
+
+

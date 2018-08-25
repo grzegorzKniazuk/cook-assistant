@@ -19,11 +19,11 @@ const DASHBOARD_CONTAINER_ROUTES: Routes = [
           { path: 'list', component: RecipesListComponent, canActivate: [ AuthActivateGuard ] },
           { path: 'add', component: AddRecipeComponent, canActivate: [ AuthActivateGuard ], children: [
               {path: '', redirectTo: 'step-1' },
-              {path: 'step-1', component: Step1Component, canActivate: [ AuthActivateGuard] },
-              {path: 'step-2', component: Step2Component, canActivate: [ AuthActivateGuard] },
-              {path: 'step-3', component: Step3Component, canActivate: [ AuthActivateGuard] },
-              {path: 'step-4', component: Step4Component, canActivate: [ AuthActivateGuard] },
-              {path: 'step-5', component: Step5Component, canActivate: [ AuthActivateGuard] },
+              {path: 'step-1', component: Step1Component, canActivate: [ AuthActivateGuard ] },
+              {path: 'step-2', component: Step2Component, canActivate: [ AuthActivateGuard ] },
+              {path: 'step-3', component: Step3Component, canActivate: [ AuthActivateGuard ] },
+              {path: 'step-4', component: Step4Component, canActivate: [ AuthActivateGuard ] },
+              {path: 'step-5', component: Step5Component, canActivate: [ AuthActivateGuard ] },
             ]
           },
           { path: 'profile', component: MyProfileComponent, canActivate: [ AuthActivateGuard ] },

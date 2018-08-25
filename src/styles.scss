@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 $source-sans-pro: 'Source Sans Pro', serif;
 
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
 h1 {
   font-size: $headline-1;
 }

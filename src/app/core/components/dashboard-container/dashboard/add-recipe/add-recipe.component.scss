@@ -1,20 +1,24 @@
 @import "../../../../../../assets/styles/partials/variables";
 
-div {
+.add-recipe-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 100%;
-  height: calc(100vh - 122px);
+  min-height: 100%;
   animation: show-elements 250ms ease-in;
+  background: url("../../../../../../assets/images/backgrounds/add-new-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .steps-description {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    width: 100px;
-    height: 80%;
+    width: 160px;
+    height: 70vh;
     margin-right: 10px;
     div {
       display: flex;
@@ -23,6 +27,7 @@ div {
       margin-right: 45px;
       width: 160px;
       height: 52px;
+      line-height: 52px;
       margin-bottom: 12px;
     }
   }
@@ -32,15 +37,20 @@ div {
     flex-direction: column;
     justify-content: flex-start;
     width: 65px;
-    height: 80%;
+    height: 70vh;
     margin-right: 10px;
     div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: $headline-3;
       width: 50px;
       height: 50px;
+      line-height: 50px;
       border: 2px solid var(--black);
       margin-bottom: 10px;
       border-radius: 25px;
+      background: var(--white);
       cursor: pointer;
       &.step-active {
         border: 2px solid var(--success-alert);
@@ -48,13 +58,18 @@ div {
         color: var(--success);
         transition: color 250ms ease-in;
       }
+      :after {
+        width: 50px;
+        height: 50px;
+        content: 'content';
+      }
     }
   }
   form {
     display: flex;
     position: relative;
     width: 60vw;
-    height: 80%;
+    height: 70vh;
     border: 1px solid var(--black);
     animation: show-elements 250ms ease-in;
   }

@@ -1,6 +1,8 @@
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
-<div class="dashboardMessages">
-  <!--<img [src]="womanChefClipart">-->
-  <ng-container #dashboardMessages></ng-container>
+<div class="dashboard-wrapper">
+  <app-navigation></app-navigation>
+  <router-outlet></router-outlet>
+  <div class="dashboard-messages">
+    <img [src]="womanChefClipart">
+    <ng-container #dashboardMessages></ng-container>
+  </div>
 </div>

@@ -8,6 +8,7 @@ import { IconsModule } from './icons.module';
 import { LogoHeaderComponent } from './components/logo-header/logo-header.component';
 import { RouterModule } from '@angular/router';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     DropdownComponent,
     LogoHeaderComponent,
     FileUploadComponent,
+    ProgressBarComponent,
   ],
   entryComponents: [
     AlertComponent,
@@ -35,6 +37,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     IconsModule,
     CommonModule,
     FileUploadComponent,
+    ProgressBarComponent,
   ]
 })
 export class SharedModule { }
