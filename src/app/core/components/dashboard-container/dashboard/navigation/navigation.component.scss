@@ -2,7 +2,6 @@
 
 nav {
   display: inline-flex;
-  position: absolute;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -10,6 +9,7 @@ nav {
   height: 60px;
   background: var(--success-alert);
   animation: show-elements 250ms ease-in;
+  box-shadow: 0 0 16px 0 rgba(0,0,0,0.5);;
 
   div {
     display: inline-flex;

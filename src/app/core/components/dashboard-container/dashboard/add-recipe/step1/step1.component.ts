@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RecipeFormService } from '../../../../../services/recipe-form.service';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-step1',

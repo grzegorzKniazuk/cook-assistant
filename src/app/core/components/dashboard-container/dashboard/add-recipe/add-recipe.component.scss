@@ -8,10 +8,6 @@
   width: 100%;
   min-height: 100%;
   animation: show-elements 250ms ease-in;
-  background: url("../../../../../../assets/images/backgrounds/add-new-background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 
   .steps-description {
     display: flex;
@@ -72,5 +68,6 @@
     height: 70vh;
     border: 1px solid var(--black);
     animation: show-elements 250ms ease-in;
+    background: var(--light);
   }
 }

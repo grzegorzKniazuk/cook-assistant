@@ -1,5 +1,18 @@
 @import "../../../../../../../assets/styles/partials/variables";
 
+div {
+  display: flex;
+  height: 50px;
+  width: 60vw;
+  div {
+    display: flex;
+    position: relative;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    width: 40vw;
+  }
+}
+
 button {
   position: absolute;
   bottom: 15px;

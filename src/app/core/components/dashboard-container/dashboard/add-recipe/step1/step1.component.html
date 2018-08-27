@@ -1,1 +1,8 @@
+<div>
+  <div [formGroup]="this.recipeFormService.addRecipeForm">
+    <app-validation-feedback controlName="title"></app-validation-feedback>
+    <input type="text" id="title" class="fixed" formControlName="title">
+    <label for="title">Nazwa potrawy</label>
+  </div>
+</div>
 <button class="big success" [routerLink]="['step-2']">Dalej</button>
