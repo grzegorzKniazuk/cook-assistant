@@ -1,0 +1,18 @@
+@import "../../../../assets/styles/partials/variables";
+
+div {
+  input[type='file'] {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(10);
+    }
+  }
+  div {
+    text-align: center;
+    font-size: $headline-2;
+  }
+}

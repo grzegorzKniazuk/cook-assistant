@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { RecipeFormService } from '../../../../../services/recipe-form.service';
-import {FormGroup} from '@angular/forms';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {RecipeFormService} from '../../../../../services/recipe-form.service';
 
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
   styleUrls: ['./step1.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Step1Component {
 

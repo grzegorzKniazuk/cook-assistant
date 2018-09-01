@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RecipeFormService } from '../../../../../services/recipe-form.service';
 
 @Component({
   selector: 'app-step3',
@@ -6,11 +7,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./step3.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Step3Component implements OnInit {
+export class Step3Component {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(public recipeFormService: RecipeFormService) { }
 }
