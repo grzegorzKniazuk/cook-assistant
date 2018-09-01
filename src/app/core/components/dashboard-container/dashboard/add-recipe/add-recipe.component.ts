@@ -13,5 +13,10 @@ export class AddRecipeComponent implements OnInit {
 
   public ngOnInit(): void {
     this.recipeFormService.addRecipeFormInit();
+    this.recipeFormService.addRecipeForm.valueChanges.subscribe(value => {
+      console.log(value);
+      console.log(this.recipeFormService.addRecipeForm);
+    });
+
   }
 }

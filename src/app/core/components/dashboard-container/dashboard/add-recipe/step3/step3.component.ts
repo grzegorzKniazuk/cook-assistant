@@ -9,5 +9,24 @@ import { RecipeFormService } from '../../../../../services/recipe-form.service';
 })
 export class Step3Component {
 
+  public readonly categories = [
+    { id : 'c0', description: 'Przekąski i przystawki' },
+    { id : 'c1', description: 'Dania główne' },
+    { id : 'c2', description: 'Desery' },
+    { id : 'c3', description: 'Zupy' },
+    { id : 'c4', description: 'Ryby i owoce morza' },
+    { id : 'c5', description: 'Ciasta i ciasteczka' },
+    { id : 'c6', description: 'Zapiekanki' },
+    { id : 'c7', description: 'Potrawy z warzyw' },
+    { id : 'c8', description: 'Drób' },
+    { id : 'c9', description: 'Dziczyzna' },
+    { id : 'c10', description: 'Grill i barbeque' },
+    { id : 'c11', description: 'Naleśniki, placki i omlety' },
+    { id : 'c12', description: 'Napoje i drinki' },
+    { id : 'c13', description: 'Sosy i dipy' },
+    { id : 'c14', description: 'Mączne i zbożowe' },
+    { id : 'c15', description: 'Sałatki' },
+  ];
+
   constructor(public recipeFormService: RecipeFormService) { }
 }

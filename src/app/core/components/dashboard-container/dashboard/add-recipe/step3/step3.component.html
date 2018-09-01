@@ -1,21 +1,9 @@
-<div>
-  <app-checkbox>Przekąski i przystawki</app-checkbox>
-  <app-checkbox>Dania główne</app-checkbox>
-  <app-checkbox>Desery</app-checkbox>
-  <app-checkbox>Zupy</app-checkbox>
-  <app-checkbox>Ryby i owoce morza</app-checkbox>
-  <app-checkbox>Ciasta i ciasteczka</app-checkbox>
-  <app-checkbox>Zapiekanki</app-checkbox>
-  <app-checkbox>Potrawy z warzyw</app-checkbox>
-  <app-checkbox>Drób</app-checkbox>
-  <app-checkbox>Dziczyzna</app-checkbox>
-  <app-checkbox>Grill i barbeque</app-checkbox>
-  <app-checkbox>Naleśniki, placki i omlety</app-checkbox>
-  <app-checkbox>Napoje i drinki</app-checkbox>
-  <app-checkbox>Sosy i dipy</app-checkbox>
-  <app-checkbox>Mączne i zbożowe</app-checkbox>
-  <app-checkbox>Sałatki</app-checkbox>
-  <app-checkbox></app-checkbox>
+<div class="categories-wrapper">
+  <div [formGroup]="this.recipeFormService.addRecipeForm">
+    <ng-container formGroupName="categories">
+      <app-checkbox *ngFor="let category of categories">{{ category.description }}</app-checkbox>
+    </ng-container>
+  </div>
 </div>
 <button class="big secondary" [routerLink]="['step-2']">Wstecz</button>
 <button class="big success" [routerLink]="['step-4']">Dalej</button>
