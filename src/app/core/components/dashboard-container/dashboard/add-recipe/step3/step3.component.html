@@ -1,8 +1,6 @@
 <div class="categories-wrapper">
   <div [formGroup]="this.recipeFormService.addRecipeForm">
-    <ng-container formGroupName="categories">
-      <app-checkbox *ngFor="let category of categories">{{ category.description }}</app-checkbox>
-    </ng-container>
+    <app-checkbox *ngFor="let category of categories" [formControlName]="category.id">{{ category.description }}</app-checkbox>
   </div>
 </div>
 <button class="big secondary" [routerLink]="['step-2']">Wstecz</button>

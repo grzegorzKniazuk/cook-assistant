@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { RecipeFormService } from '../../../../../services/recipe-form.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { RecipeFormService } from '../../../../../services/recipe-form.service';
   styleUrls: ['./step3.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Step3Component {
+export class Step3Component implements OnInit {
 
   public readonly categories = [
     { id : 'c0', description: 'Przekąski i przystawki' },
@@ -29,4 +29,11 @@ export class Step3Component {
   ];
 
   constructor(public recipeFormService: RecipeFormService) { }
+
+  ngOnInit(): void {
+    this.recipeFormService.addRecipeForm.valueChanges.subscribe(value => {
+      console.log(value);
+      console.log(this.recipeFormService.addRecipeForm);
+    });
+  }
 }
