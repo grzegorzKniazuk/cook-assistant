@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, forwardRef, Renderer2, ViewChild } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {CheckboxControlValueAccessor, ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 const CHECKBOX_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -14,8 +14,9 @@ const CHECKBOX_VALUE_ACCESSOR: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class CheckboxComponent implements ControlValueAccessor {
+export class CheckboxComponent extends CheckboxControlValueAccessor {
 
+/*
   public _onChange: (_: any) => {};
   public _onTouched: () => {};
   @ViewChild('checkbox') private checkboxElement: ElementRef;
@@ -36,5 +37,5 @@ export class CheckboxComponent implements ControlValueAccessor {
 
   public setDisabledState(isDisabled: boolean): void {
     this._renderer.setProperty(this.checkboxElement.nativeElement, 'disabled', isDisabled);
-  }
+  }*/
 }
